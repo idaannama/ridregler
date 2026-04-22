@@ -59,7 +59,7 @@ export default function Home() {
   return (
     <>
     <HorseBackground />
-    <main className="flex flex-col h-screen max-w-2xl mx-auto px-4">
+    <main className="flex flex-col h-dvh max-w-2xl mx-auto px-4 overflow-hidden">
       <header className="py-5 border-b text-center">
         <h1 className="text-5xl font-bold text-gray-800" style={{ fontFamily: "var(--font-dancing)" }}>
           tävlingsfasit delux

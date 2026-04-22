@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(curl -s http://localhost:3000)",
-      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(f'Katalog: {len\\(d\\)} bilder beskrivna'\\)\")"
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(f'Katalog: {len\\(d\\)} bilder beskrivna'\\)\")",
+      "Bash(git -C /Users/ida.franzen/Documents/App status)",
+      "Bash(git -C /Users/ida.franzen/Documents/App diff)",
+      "Bash(git -C /Users/ida.franzen/Documents/App add app/globals.css app/page.tsx .claude/settings.local.json)",
+      "Bash(git -C /Users/ida.franzen/Documents/App commit -m ' *)"
     ]
   }
 }
