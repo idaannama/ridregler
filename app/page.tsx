@@ -66,10 +66,12 @@ export default function Home() {
         </h1>
         <p className="text-xs text-gray-400 mt-1 tracking-widest uppercase">– det ultimata TR-verktyget –</p>
       </header>
-      <MessageList messages={messages} loading={loading} persona={persona} />
-      {error && <p className="text-red-500 text-sm px-1 py-1">{error}</p>}
+      <div className="flex-1 overflow-y-auto pb-36">
+        <MessageList messages={messages} loading={loading} persona={persona} />
+        {error && <p className="text-red-500 text-sm px-1 py-1">{error}</p>}
+        <div ref={bottomRef} />
+      </div>
       <ChatInput onSubmit={handleSubmit} disabled={loading} persona={persona} onPersonaChange={setPersona} />
-      <div ref={bottomRef} />
     </main>
     </>
   );

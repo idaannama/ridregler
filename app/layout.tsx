@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Dancing_Script } from "next/font/google";
 import "./globals.css";
 
@@ -7,6 +7,11 @@ const dancing = Dancing_Script({ subsets: ["latin"], variable: "--font-dancing" 
 export const metadata: Metadata = {
   title: "tävlingsfasit delux",
   description: "Ställ frågor om Svenska Ridsportförbundets tävlingsreglemente",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

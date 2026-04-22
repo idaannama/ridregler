@@ -10,9 +10,9 @@ interface Props {
 
 export default function MessageList({ messages, loading, persona }: Props) {
   return (
-    <div className="flex-1 overflow-y-auto py-4 space-y-4">
+    <div className="py-4 space-y-4">
       {messages.length === 0 && (
-        <p className="text-center text-gray-400 mt-16">
+        <p className="text-center text-gray-400 mt-6">
           Ställ en fråga om tävlingsreglementet (TR).
         </p>
       )}

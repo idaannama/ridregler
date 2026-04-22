@@ -52,7 +52,7 @@ export default function ChatInput({ onSubmit, disabled, persona, onPersonaChange
   }
 
   return (
-    <div className="py-3 border-t">
+    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4 bg-white border-t pt-2 pb-4">
       <div className="flex gap-2 mb-2 flex-wrap">
         <span className="text-xs text-gray-400 self-center">Vem svarar?</span>
         {PERSONAS.map((p) => (

@@ -59,7 +59,7 @@ export default function TomteLoader({ persona }: Props) {
   }, [phrases.length]);
 
   return (
-    <div className="flex justify-start">
+    <div className="flex justify-center">
       <div className="flex flex-col items-center gap-2 py-2 px-4">
         <div
           className="relative flex flex-col items-center"
