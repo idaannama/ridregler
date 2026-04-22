@@ -54,7 +54,6 @@ export default function ChatInput({ onSubmit, disabled, persona, onPersonaChange
   return (
     <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4 bg-white border-t pt-2 pb-4">
       <div className="flex gap-2 mb-2 flex-wrap">
-        <span className="text-xs text-gray-400 self-center">Vem svarar?</span>
         {PERSONAS.map((p) => (
           <button
             key={p.id}
@@ -70,7 +69,7 @@ export default function ChatInput({ onSubmit, disabled, persona, onPersonaChange
       </div>
       <div className="flex gap-2 items-end">
         <textarea
-          className="flex-1 resize-none border rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex-1 resize-none border rounded-xl px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
           rows={2}
           placeholder="Skriv din fråga om TR… (Enter för att skicka)"
           value={value}
