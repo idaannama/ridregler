@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  zoom: 0.9;
+}
+
 @keyframes tomte-hop {
   0%, 100% { transform: translateY(0) rotate(-5deg) scale(1); }
   40%       { transform: translateY(-28px) rotate(5deg) scale(1.1); }
