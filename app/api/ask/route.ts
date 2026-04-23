@@ -175,7 +175,7 @@ export async function POST(request: NextRequest) {
         const followupIndex = answer.indexOf(followupMarker);
         if (followupIndex !== -1) {
           const followupRaw = answer.slice(followupIndex + followupMarker.length).trim();
-          suggestedQuestions = followupRaw.split("|").map((q) => q.trim()).filter(Boolean).slice(0, 3);
+          suggestedQuestions = followupRaw.split("|").map((q: string) => q.trim()).filter(Boolean).slice(0, 3);
           answer = answer.slice(0, followupIndex).trim();
         }
 
