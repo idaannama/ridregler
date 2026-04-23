@@ -63,7 +63,7 @@ export default function TomteLoader({ persona }: Props) {
       <div className="flex flex-col items-center gap-2 py-2 px-4">
         <div
           className="relative flex flex-col items-center"
-          style={{ marginTop: "2.5rem" }}
+          style={{ marginTop: "5rem" }}
         >
           {/* Speech bubble */}
           <div

@@ -85,4 +85,6 @@ html, body {
   font-weight: 600;
   text-decoration: underline;
   text-decoration-color: #f472b6;
+  pointer-events: auto;
+  cursor: pointer;
 }

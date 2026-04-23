@@ -29,6 +29,12 @@ const PERSONAS: { id: Persona; label: string; color: string; activeColor: string
     color: "border-amber-500 text-amber-700 hover:bg-amber-50",
     activeColor: "bg-amber-500 border-amber-500 text-white",
   },
+  {
+    id: "domare",
+    label: "Domaren",
+    color: "border-slate-500 text-slate-700 hover:bg-slate-50",
+    activeColor: "bg-slate-700 border-slate-700 text-white",
+  },
 ];
 
 export default function ChatInput({ onSubmit, disabled, persona, onPersonaChange }: Props) {
@@ -59,7 +65,7 @@ export default function ChatInput({ onSubmit, disabled, persona, onPersonaChange
             key={p.id}
             onClick={() => togglePersona(p.id)}
             disabled={disabled}
-            className={`px-3 py-1 text-xs rounded-full border font-medium transition-colors disabled:opacity-50 ${
+            className={`px-2 py-0.5 text-[10px] rounded-full border font-medium transition-colors disabled:opacity-50 ${
               persona === p.id ? p.activeColor : p.color
             }`}
           >

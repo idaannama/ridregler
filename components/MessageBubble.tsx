@@ -8,7 +8,7 @@ export default function MessageBubble({ message }: { message: Message }) {
   return (
     <div className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
       <div
-        className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm ${
+        className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm overflow-hidden ${
           isUser ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-900"
         }`}
       >
@@ -46,7 +46,7 @@ export default function MessageBubble({ message }: { message: Message }) {
                   {alt && <span className="block text-xs text-gray-500 mt-1 italic">{alt}</span>}
                 </span>
               ),
-              a: ({ href, children }) => <a href={href} target="_blank" rel="noopener noreferrer" className="glitter-link">{children}</a>,
+              a: ({ href, children }) => <a href={href} target="_blank" rel="noopener noreferrer" className="glitter-link break-all">{children}</a>,
               hr: () => <hr className="border-gray-300 my-2" />,
               blockquote: ({ children }) => <blockquote className="border-l-2 border-gray-400 pl-3 italic text-gray-700 my-2">{children}</blockquote>,
             }}

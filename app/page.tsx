@@ -11,6 +11,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [persona, setPersona] = useState<Persona>(null);
+  const [suggestedQuestions, setSuggestedQuestions] = useState<string[]>([]);
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,6 +31,7 @@ export default function Home() {
     setMessages(updatedMessages);
     setLoading(true);
     setError(null);
+    setSuggestedQuestions([]);
 
     try {
       const res = await fetch("/api/ask", {
@@ -49,6 +51,7 @@ export default function Home() {
         ...prev,
         { id: crypto.randomUUID(), role: "assistant", content: data.answer },
       ]);
+      setSuggestedQuestions(data.suggestedQuestions ?? []);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Något gick fel.");
     } finally {
@@ -60,14 +63,17 @@ export default function Home() {
     <>
     <HorseBackground />
     <main className="flex flex-col h-dvh max-w-2xl mx-auto px-4 overflow-hidden">
-      <header className="py-5 border-b text-center">
+      <header className="pt-8 pb-5 border-b text-center -mx-4 px-4">
         <h1 className="text-5xl font-bold text-gray-800" style={{ fontFamily: "var(--font-dancing)" }}>
           tävlingsfasit delux
         </h1>
         <p className="text-xs text-gray-400 mt-1 tracking-widest uppercase">– det ultimata TR-verktyget –</p>
       </header>
-      <div className="flex-1 overflow-y-auto pb-36">
-        <MessageList messages={messages} loading={loading} persona={persona} />
+      <div
+        className="flex-1 overflow-y-auto pb-36"
+        style={{ maskImage: "linear-gradient(to bottom, transparent 0%, black 8px, black calc(100% - 8px), transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 8px, black calc(100% - 8px), transparent 100%)" }}
+      >
+        <MessageList messages={messages} loading={loading} persona={persona} onQuickQuestion={handleSubmit} suggestedQuestions={suggestedQuestions} />
         {error && <p className="text-red-500 text-sm px-1 py-1">{error}</p>}
         <div ref={bottomRef} />
       </div>
