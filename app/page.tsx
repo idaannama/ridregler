@@ -63,14 +63,14 @@ export default function Home() {
     <>
     <HorseBackground />
     <main className="flex flex-col h-dvh max-w-2xl mx-auto px-4 overflow-hidden">
-      <header className="pt-8 pb-5 border-b text-center -mx-4 px-4">
+      <header className="pt-8 pb-5 border-b border-gray-300 text-center -mx-4 px-4">
         <h1 className="text-5xl font-bold text-gray-800" style={{ fontFamily: "var(--font-dancing)" }}>
           tävlingsfasit delux
         </h1>
         <p className="text-xs text-gray-400 mt-1 tracking-widest uppercase">– det ultimata TR-verktyget –</p>
       </header>
       <div
-        className="flex-1 overflow-y-auto pb-36"
+        className="flex-1 overflow-y-auto pb-28"
         style={{ maskImage: "linear-gradient(to bottom, transparent 0%, black 8px, black calc(100% - 8px), transparent 100%)", WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 8px, black calc(100% - 8px), transparent 100%)" }}
       >
         <MessageList messages={messages} loading={loading} persona={persona} onQuickQuestion={handleSubmit} suggestedQuestions={suggestedQuestions} />

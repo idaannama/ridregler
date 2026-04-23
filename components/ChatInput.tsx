@@ -58,7 +58,7 @@ export default function ChatInput({ onSubmit, disabled, persona, onPersonaChange
   }
 
   return (
-    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4 bg-white border-t pt-2 pb-4">
+    <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl px-4 bg-white border-t border-gray-300 pt-2 pb-4">
       <div className="flex gap-2 mb-2 flex-wrap">
         {PERSONAS.map((p) => (
           <button
@@ -76,8 +76,8 @@ export default function ChatInput({ onSubmit, disabled, persona, onPersonaChange
       <div className="flex gap-2 items-end">
         <textarea
           className="flex-1 resize-none border rounded-xl px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
-          rows={2}
-          placeholder="Skriv din fråga om TR… (Enter för att skicka)"
+          rows={1}
+          placeholder="Ställ en fråga.."
           value={value}
           onChange={(e) => setValue(e.target.value)}
           onKeyDown={handleKeyDown}
@@ -86,9 +86,12 @@ export default function ChatInput({ onSubmit, disabled, persona, onPersonaChange
         <button
           onClick={submit}
           disabled={disabled || !value.trim()}
-          className="px-4 py-2 bg-blue-600 text-white rounded-xl text-sm disabled:opacity-50 hover:bg-blue-700 transition-colors"
+          className="p-2.5 bg-blue-600 text-white rounded-xl disabled:opacity-50 hover:bg-blue-700 transition-colors flex items-center justify-center"
         >
-          Skicka
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="20" height="20" style={{transform: "rotate(-90deg)"}}>
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
         </button>
       </div>
     </div>
