@@ -88,11 +88,6 @@ export default function MessageList({ messages, loading, persona, onQuickQuestio
 
   return (
     <div className="pt-2 pb-4 space-y-4">
-      {messages.length === 0 && (
-        <p className="text-center text-gray-400 mt-6">
-          Ställ en fråga om tävlingsreglementet (TR).
-        </p>
-      )}
       {messages.map((m) => (
         <MessageBubble key={m.id} message={m} />
       ))}
